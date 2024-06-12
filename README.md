@@ -37,7 +37,7 @@ You can clone my pi-clock stuff from GitHub.
   
     $ mkdir ~/tmp
     $ cd ~/tmp
-    $ git clone https://github.com/
+    $ git clone https://github.com/Jaddy4567/pi-clock
     $ cd pi-clock
     $ ./install.sh
 

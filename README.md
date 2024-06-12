@@ -8,19 +8,19 @@ When the login prompt appears, login with
 	    $ Run sudo raspi-config
 
    1. In "1 System Options" do the following
-      - First, Set Wirless. "S1 Wireless Lan" and set your wireless network.
-      - Second, Set the password for the pi account. "S3 Password" make sure you do NOT chance the username.
-      - Third, Set Hostname. "S4 Hostname" Defualt Should be "raspberrypi.local" But for networks with multiple Raspberry pi's you need to add a number to the end
-      - Forth, Allow Auto Login. "S5 Boot / Auto Login" Choose "B4 Desktop Autologin"
+   - First, Set Wirless. "S1 Wireless Lan" and set your wireless network.
+   - Second, Set the password for the pi account. "S3 Password" make sure you do NOT chance the username.
+   - Third, Set Hostname. "S4 Hostname" Defualt Should be "raspberrypi.local" But for networks with multiple Raspberry pi's you need to add a number to the end
+   - Forth, Allow Auto Login. "S5 Boot / Auto Login" Choose "B4 Desktop Autologin"
 
    2 . In "3 Interface Options" Do the following
-       - "I2 SSH" Enable ssh
+   - "I2 SSH" Enable ssh
 
    3. In "5 Localisation Options" Do the Following
-       - "L2 Timezone" Set Your Timezone
-       - "L4 WLAN Country" Set Wireless Channels for your Country
+   - "L2 Timezone" Set Your Timezone
+   - "L4 WLAN Country" Set Wireless Channels for your Country
 
-   4. 
+   4. Update System. Exit the config menu and reboot pi then run the following
 	  
     $ sudo apt update
     $ sudo apt upgrade
@@ -35,8 +35,8 @@ When the login prompt appears, login with
 # **3. Get the Clock App**
 You can clone my pi-clock stuff from GitHub.
   
-    $ mkdir ~/tmp
-    $ cd ~/tmp
+    $ mkdir tmp
+    $ cd tmp
     $ git clone https://github.com/Jaddy4567/pi-clock
     $ cd pi-clock
     $ ./install.sh
@@ -50,7 +50,14 @@ You can read install.sh as well as the other files so get an idea of how things 
 
 # **Final Notes **
 
-If install is not working press 
+If ./install.sh gives an error run the following
+
+	chmod u+x install.sh
+
+Then run the install command again
+
+
+If Application is not working press 
 - CTRL + ALT + F2
 To return to Command Line
 

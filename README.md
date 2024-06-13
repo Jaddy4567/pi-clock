@@ -5,7 +5,7 @@ When the login prompt appears, login with
   - user: pi
   - password: raspberry
 
-	    $ Run sudo raspi-config
+	    $ sudo raspi-config
 
    1. In "1 System Options" do the following
    - First, Set Wirless. "S1 Wireless Lan" and set your wireless network.

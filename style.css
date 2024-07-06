@@ -41,7 +41,7 @@ body {
 
 #hour, #min, #sec {
     font-family: "NotoSans";
-    font-weight: bold;
+    font-weight: normal;
 }
 #hour, #min {
     font-size: 120%;

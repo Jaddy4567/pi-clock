@@ -1,0 +1,60 @@
+/* share-tech-mono-regular - latin */
+@font-face {
+  font-family: 'Share Tech Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Share Tech Mono'), local('ShareTechMono-Regular'),
+       url('fonts/share-tech-mono-v9-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/share-tech-mono-v9-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('NotoSans'),
+       url('fonts/NotoSans-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       
+}
+
+body {
+    margin: 0;
+    background: black;
+    color: white;
+}
+
+#TextContainer {
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    text-align: center;
+    color: white;
+    transform: translateY(-50%);
+}
+#JW-Logo  {
+    width: 10%;
+    position: absolute;
+    top: 85%;
+    left: 85%;
+    color: white;
+    transform: translateY(-50%);
+}
+
+#hour, #min, #sec {
+    font-family: "NotoSans";
+    font-weight: bold;
+}
+#hour, #min {
+    font-size: 120%;
+}
+
+#sign {
+    font-family: "NotoSans";
+    font-size: 120%;
+}
+
+#TextCell {
+    font-size: 100%;
+    display: inline;
+    visibility: hidden;
+}
+

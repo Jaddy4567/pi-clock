@@ -11,18 +11,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="showTime()">
+<body onload="init()">
 
-<div id="TextContainer" class="clock">
+<div id="LoadingContainer">
+  <div>Connecting</div>
+  <meter id="Meter" min="0" max="100" low="33" high="66" optimum="80" value="0">
+</div>
+
+<div id="TextContainer" class="hidden">
     <div id="TextCell">
-    <span id="sign"></span><span id="hour"></span><span id="hoursep">:</span><span id="min"></span><span>:</span><span id="sec"></span>
+      <div id="hour"></div>
+      <div id="hoursep">:</div>
+      <div id="min"></div>
+      <div>:</div>
+      <div id="sec"></div>
     </div>
 </div>
 
-<div id="JW-Logo">
-    <img src="img/JWorg.png" width="200px" height="200px"/>
-
-<script src="js/jquery-3.4.1.min.js"></script>
 <script src="script.js"></script>
 
 </body>

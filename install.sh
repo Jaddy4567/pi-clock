@@ -72,7 +72,7 @@ chmod 755 ~/.config/lxsession/LXDE-pi/autostart
 sudo apt install -y unclutter
 
 # Install crontab for checking health
-(crontab -l 2>/dev/null | grep -v "bin/checkhealth.sh"; echo "* * * * * bin/checkhealth.sh") | crontab -
+# (crontab -l 2>/dev/null | grep -v "bin/checkhealth.sh"; echo "* * * * * bin/checkhealth.sh") | crontab -
 
 # Set SSH enabled
 sudo raspi-config nonint do_ssh 0
@@ -84,7 +84,7 @@ sudo raspi-config nonint do_boot_behaviour B4
 sudo raspi-config nonint do_overscan 1
 
 # Set timezone
-sudo raspi-config nonint do_change_timezone Asia/Singapore
+sudo raspi-config nonint do_change_timezone Australia/Melbourne
 
 # Disable setup wizard
 sudo rm /etc/xdg/autostart/piwiz.desktop

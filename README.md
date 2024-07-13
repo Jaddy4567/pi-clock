@@ -1,6 +1,6 @@
 First Edit (JW logo) DO NOT MERGE TO MAIN
 
-This edit included the JW.org logo and Font
+This edit included the JW.org logo 
 
 
 # **1. Setup**

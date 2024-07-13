@@ -34,6 +34,7 @@ When the login prompt appears, login with
 
 # **3. Get the Clock App**
 You can clone my pi-clock stuff from GitHub.
+Note that if the ./install.sh command fails see "Final Notes" for the fix
   
     $ mkdir tmp
     $ cd tmp

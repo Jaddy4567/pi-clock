@@ -1,3 +1,8 @@
+This branch is the original code. DO NOT MERGE TO MAIN
+
+The Code is unchanged from original download 
+
+Original font. 
 # **1. Setup**
 
 Flash an SD card 16gb or bigger with a FULL desktop version of Raspberry Pi OS Bullseye

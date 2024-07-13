@@ -1,3 +1,8 @@
+First Edit (JW logo) DO NOT MERGE TO MAIN
+
+This edit included the JW.org logo and Font
+
+
 # **1. Setup**
 
 Flash an SD card 16gb or bigger with a FULL desktop version of Raspberry Pi OS Bullseye

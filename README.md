@@ -33,14 +33,15 @@ When the login prompt appears, login with
     sudo apt install git
 
 # **3. Get the Clock App**
-You can clone my pi-clock stuff from GitHub.
-Note that if the ./install.sh command fails see "Final Notes" for the fix
+* You can clone my pi-clock stuff from GitHub.
+* Note that if the ./install.sh command fails see "Final Notes" for the fix
   
-    $ mkdir tmp
-    $ cd tmp
-    $ git clone https://github.com/Jaddy4567/pi-clock
-    $ cd pi-clock
-    $ ./install.sh
+
+    	$ mkdir tmp
+    	$ cd tmp
+    	$ git clone https://github.com/Jaddy4567/pi-clock
+    	$ cd pi-clock
+    	$ ./install.sh
 
 This will do several things:
 * Create and populate the directory ~/pi-clock to hold web content to be served locally.

@@ -1,114 +1,44 @@
 /* share-tech-mono-regular - latin */
 @font-face {
-    font-family: 'Share Tech Mono';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Share Tech Mono'), local('ShareTechMono-Regular'),
-        url('fonts/share-tech-mono-v9-latin-regular.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('fonts/share-tech-mono-v9-latin-regular.woff') format('woff');
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-@font-face {
-    font-family: 'NotoSans';
-    font-style: normal;
-    font-weight: 400;
-    src: local('NotoSans'),
-        url('fonts/NotoSans-Regular.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-
+  font-family: 'Share Tech Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Share Tech Mono'), local('ShareTechMono-Regular'),
+       url('fonts/share-tech-mono-v9-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/share-tech-mono-v9-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 body {
-    font-family: "NotoSans";
     margin: 0;
     background: black;
     color: white;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    font-weight: normal;
 }
 
 #TextContainer {
-    width: 90%;
-    /* position: absolute;
-    top: 55%; */
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    text-align: center;
     color: white;
-    /* transform: translateY(-50%); */
+    transform: translateY(-50%);
 }
 
-#sec {
-    font-size: 80%;
+#hour, #min, #sec {
+    font-family: "Share Tech Mono";
+    font-weight: bold;
+}
+#hour, #min {
+    font-size: 120%;
 }
 
+#sign {
+    font-family: "Share Tech Mono";
+    font-size: 120%;
+}
 
 #TextCell {
-    font-size: 20vw;
+    font-size: 100%;
     display: inline;
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr 1fr 2fr;
-    align-content: center;
-    justify-items: center;
+    visibility: hidden;
 }
 
-#LoadingContainer {
-    font-size: 15vw;
-    width: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#Meter {
-    --background: #000;
-    --foreground: #fff;
-    /* The gray background in Firefox */
-    background: var(--background);
-    display: block;
-    margin-bottom: 1em;
-    width: 90%;
-}
-
-/* The gray background in Chrome, etc. */
-#Meter::-webkit-meter-bar {
-    background: var(--background);
-}
-
-/* The green (optimum) bar in Firefox */
-#Meter:-moz-meter-optimum::-moz-meter-bar {
-    background: var(--foreground);
-}
-
-/* The green (optimum) bar in Chrome etc. */
-#Meter::-webkit-meter-optimum-value {
-    background: var(--foreground);
-}
-
-/* The yellow (sub-optimum) bar in Firefox */
-#Meter:-moz-meter-sub-optimum::-moz-meter-bar {
-    background: var(--foreground);
-}
-
-/* The yellow (sub-optimum) bar in Chrome etc. */
-#Meter::-webkit-meter-suboptimum-value {
-    background: var(--foreground);
-}
-
-/* The red (even less good) bar in Firefox */
-#Meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
-    background: var(--foreground);
-}
-
-/* The red (even less good) bar in Chrome etc. */
-#Meter::-webkit-meter-even-less-good-value {
-    background: var(--foreground);
-}
-
-.hidden {
-    display: none !important;
-}

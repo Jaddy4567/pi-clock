@@ -11,23 +11,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="init()">
+<body onload="showTime()">
 
-<div id="LoadingContainer">
-  <div>Connecting</div>
-  <meter id="Meter" min="0" max="100" low="33" high="66" optimum="80" value="0">
-</div>
-
-<div id="TextContainer" class="hidden">
+<div id="TextContainer" class="clock">
     <div id="TextCell">
-      <div id="hour"></div>
-      <div id="hoursep">:</div>
-      <div id="min"></div>
-      <div>:</div>
-      <div id="sec"></div>
+    <span id="sign"></span><span id="hour"></span><span id="hoursep">:</span><span id="min"></span><span>:</span><span id="sec"></span>
     </div>
 </div>
 
+<script src="js/jquery-3.4.1.min.js"></script>
 <script src="script.js"></script>
 
 </body>

@@ -27,7 +27,7 @@ When the login prompt appears, login with
 
 # **2. Install Other Needed Software**
 
-    sudo apt install –no-install-recommends xserver-xorg x11-xserver-utils xinit openbox chromium-browser xdotool
+    sudo apt install --no-install-recommends xserver-xorg x11-xserver-utils xinit openbox chromium-browser xdotool
 (That’s one long line, make sure you get all of it.)
 
     sudo apt install git

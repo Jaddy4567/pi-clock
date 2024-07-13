@@ -1,41 +1,14 @@
+
 var mode = 'clock';
+var countDownTime = '2020-07-19T00:00:00';
+var burnProtect = 1;
 
 var lastmode = '';
 var lastViewWidth;
-var timer = 1000;
-
-function init() {
-    var duration = timer * 60;
-    runMeter(duration)
-}
-
-/**
- * 
- * @param {number} duration in milliseconds
- */
-function runMeter(duration) {
-    var meter = document.getElementById('Meter');
-
-    var length = 0;
-    var interval = setInterval(function () {
-        length += 10;
-        meter.value = length;
-        if (length >= 100) {
-            showClock();
-            clearInterval(interval);
-        }
-    }, duration * 0.2);
-}
-
-function showClock() {
-    var loading = document.getElementById("LoadingContainer");
-    loading.className = "hidden";
-    var container = document.getElementById("TextContainer");
-    container.className = "";
-    showTime()
-}
+var lastHour;
 
 function showTime() {
+    var timer = 1000;
 
     // Just hardcode a future date for testing
 
@@ -47,15 +20,57 @@ function showTime() {
         lastViewWidth = 0;
     }
 
+    if (mode == 'clock') {
 
-    var h = now.getHours();
-    var m = now.getMinutes();
-    var s = now.getSeconds();
+        var h = now.getHours();
+        var m = now.getMinutes();
+        var s = now.getSeconds();
 
-    h = (h < 10) ? "0" + h : h;
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
+        h = (h < 10) ? "0" + h : h;
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+        if (burnProtect) {
+            var offset = Math.sin(m / 60 * 2 * Math.PI) * 6 + 47;
+            $('#TextContainer').css('top', offset + '%');
+        }
+    }
+    else if (mode == 'timer') {
+        var timeOver = 0;
 
+        var distance = new Date(countDownTime).getTime() - now.getTime();
+        if (distance < 0) {
+            distance = Math.floor(Math.abs(distance) / 1000);
+            timeOver = 1;
+        }
+        else {
+            distance = Math.ceil(distance / 1000);
+        }
+
+        h = Math.floor(distance / (60 * 60));
+        m = Math.floor((distance % (60 * 60)) / 60);
+        s = distance % 60;
+
+        m = (m < 10) ? "0" + m : m;
+        s = (s < 10) ? "0" + s : s;
+        document.getElementById("sign").innerText = timeOver ? "+" : "-";
+
+        if (h != lastHour) {
+            lastHour = h;
+
+            if (h == 0) {
+                $('#hour').css('display', 'none');
+                $('#hoursep').css('display', 'none');
+                $('#sec').css('font-size', '120%');
+            }
+            else {
+                $('#hour').css('display', 'inline');
+                $('#hoursep').css('display', 'inline');
+                $('#sec').css('font-size', '100%');
+            }
+
+            lastViewWidth = 0;
+        }
+    }
 
     document.getElementById("hour").innerText = h;
     document.getElementById("min").innerText = m;
@@ -72,5 +87,40 @@ function showTime() {
     }
 
     setTimeout(showTime, timer);
+
+    //setTimeout(resizeText, 50);
+    resizeText();
 }
+
+function resizeText() {
+    var viewWidth = $('#TextContainer').width();
+
+    if (viewWidth == lastViewWidth) {
+        return;
+    }
+
+    lastViewWidth = viewWidth;
+
+    var textSize = $('#TextCell').css('font-size');
+    var textWidth = $('#TextCell').width();
+    textSize = textSize.substring(0, textSize.length - 2);
+
+    if (Math.abs(viewWidth - textWidth) / viewWidth > 0.1) {
+        var newTextSize = viewWidth / textWidth * textSize * 0.95;
+        $('#TextCell').css('font-size', newTextSize + 'px');
+        $('#TextCell').css('visibility', 'visible');
+    }
+}
+
+$.getJSON("config.json", function(data) {
+    if ('mode' in data) {
+        mode = data.mode;
+        if ('countDownTime' in data && data.mode == 'timer') {
+            countDownTime = data.countDownTime;
+        }
+    }
+    if ('burnProtect' in data) {
+        burnProtect = data.burnProtect;
+    }
+});
 
